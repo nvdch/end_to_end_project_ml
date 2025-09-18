@@ -51,7 +51,10 @@ class ModelTrainer:
                 "Decision Tree": {
                     'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
                     'splitter': ['best', 'random'],
-                    'max_features': ['sqrt', 'log2']
+                    'max_features': ['sqrt', 'log2'],
+                    'min_samples_split': [2, 5, 10],
+                    'min_samples_leaf': [1, 2, 4],
+                    'max_depth': [3,5,7,10, None]
                 },
                 "Random Forest": {
                     'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
@@ -59,9 +62,9 @@ class ModelTrainer:
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 'Gradient Boosting': {
-                    'learning_rate': [.1,.01,.05,.001],
+                    'learning_rate': [.1,.01,.05],
                     'subsample': [0.6, 0.7, 0.75, 0.8, 0.85, 0.9],
-                    'criterion': ['squared_errror', 'friedman_mse'],
+                    'criterion': ['squared_error', 'friedman_mse'],
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 'Linear Regression': {},
