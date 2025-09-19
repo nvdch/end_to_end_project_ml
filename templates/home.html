@@ -1,0 +1,73 @@
+<html>
+    <body>
+        <div class="login">
+            <h1>Student Exam Performance Indicator</h1>
+
+            <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <h1>
+                <legend>Student Exam Performance Prediction</legend>
+            </h1>
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <select class="form-control" name="gender" placeholder="Enter your gender" required>
+                    <option class="placeholder" selected disabled value="">Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Race or Ethnicity</label>
+                <select class="form-control" name="ethnicity" placeholder="Enter your ethnicity" required>
+                    <option class="placeholder" selected disabled value="">Select your ethnicity</option>
+                    <option value="group A">Group A</option>
+                    <option value="group B">Group B</option>
+                    <option value="group C">Group C</option>
+                    <option value="group D">Group D</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Parental Level of Education</label>
+                <select class="form-control" name="parental_level_of_education" placeholder="Enter your Parent's Highest Education" required>
+                    <option class="placeholder" selected disabled value="">Select Parent Education</option>
+                    <option value="associate's degree">associate's degree</option>
+                    <option value="bachelor's degree">bachelor's degree</option>
+                    <option value="high school">high school</option>
+                    <option value="master's degree">Master's Degree</option>
+                    <option value="some college">Some College</option>
+                    <option value="some high school">Some High School</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Lunch</label>
+                <select class="form-control" name="lunch" placeholder="Select your lunch type" required>
+                    <option class="placeholder" selected disabled value="">Select Lunch Type</option>
+                    <option value="standard">Standard</option>
+                    <option value="free/reduced">Free/Reduced</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Test Preparation Course</label>
+                <select class="form-control" name="test_preparation_course" placeholder="Select your test preparation course" required>
+                    <option class="placeholder" selected disabled value="">Select Test Preparatrion Course</option>
+                    <option value="completed">Completed</option>
+                    <option value="none">None</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="reading_score">Reading Score</label>
+                <input type="number" class="form-control" id="reading_score" name="reading_score" placeholder="Enter your reading score" required min="0" max="100">
+            </div>
+            <div class="form-group">
+                <label for="writing_score">Writing Score</label>
+                <input type="number" class="form-control" id="writing_score" name="writing_score" placeholder="Enter your writing score" required min="0" max="100">
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
+        </div>
+</form>
+        <h2>
+            The prediction is {{results}}
+        </h2>
+    </body>
+</html>
